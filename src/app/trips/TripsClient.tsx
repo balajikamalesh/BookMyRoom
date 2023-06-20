@@ -62,7 +62,7 @@ const TripsClient = ({ reservations, currentUser }: TripsClientProps) => {
           reservations.map((reservation) => (
             <ListingCard
               key={reservation.id}
-              data={reservation.Listing}
+              data={reservation.Listing as Listing}
               reservation={reservation}
               actionId={reservation.id}
               onAction={onCancel}
