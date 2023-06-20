@@ -12,7 +12,7 @@ import ListingCard from "../components/listings/ListingCard";
 
 interface ReservationsClientProps {
   reservations: (Reservation & {
-    Listing: Listing | null;
+    Listing: Listing;
   })[];
   currentUser?: User | null;
 }
@@ -63,7 +63,7 @@ const ReservationsClient = ({
           reservations.map((reservation) => (
             <ListingCard
               key={reservation.id}
-              data={reservation.Listing}
+              data={reservation?.Listing}
               reservation={reservation}
               actionId={reservation.id}
               onAction={onCancel}

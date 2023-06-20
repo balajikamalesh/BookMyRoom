@@ -112,16 +112,18 @@ const ListingClient = ({
           />
           <div className="grid grid-cols-1 md:grid-cols-7 md:gap-10 mt-6">
             <ListingInfo
-              user={listing?.user}
+              user={listing?.user || undefined}
               category={category}
               description={listing?.description}
               roomCount={listing?.roomCount}
-              locationValue={listing?.locationValue}
+              guestCount={Number(listing?.guestCount)}
+              bathroomCount={Number(listing?.bathroomCount)}
+              locationValue={listing?.locationValue || ""}
             />
             <div className="order-first mb-10 md:order-last md:col-span-3">
               <ListingReservation
-                price={listing?.Price}
-                totalPrice={totalPrice}
+                price={Number(listing?.Price)}
+                totalPrice={Number(totalPrice)}
                 onChangeDate={(value) => setDateRange(value)}
                 dateRange={dateRange}
                 onSubmit={onCreateReservation}

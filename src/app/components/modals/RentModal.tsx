@@ -6,7 +6,6 @@ import { categories } from "../navbar/Categories";
 import CategoryInput from "../Inputs/CategoryInput";
 import { FieldValues, useForm, SubmitHandler } from "react-hook-form";
 import CountrySelect from "../Inputs/CountrySelect";
-import useRentModal from "../../hooks/userentModal";
 import dynamic from "next/dynamic";
 import Counter from "../Inputs/Counter";
 import ImageUpload from "../Inputs/ImageUpload";
@@ -14,6 +13,7 @@ import Input from "../Inputs/Input";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import { useRouter } from "next/navigation";
+import useRentModal from "../../hooks/useRentModal";
 
 enum STEPS {
   CATEGORY = 0,

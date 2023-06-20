@@ -92,7 +92,7 @@ const ListingCard = ({
             disabled={disabled}
             small
             label={actionLabel}
-            OnClick={handleCancel}
+            onClick={handleCancel}
           />
         )}
       </div>

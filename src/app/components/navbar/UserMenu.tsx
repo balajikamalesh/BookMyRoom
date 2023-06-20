@@ -7,8 +7,8 @@ import useRegisterModal from "../../hooks/useRegisterModal";
 import useLoginModal from "../../hooks/useLoginModal";
 import { User } from "@prisma/client";
 import { signOut } from "next-auth/react";
-import useRentModal from "../../hooks/userentModal";
 import { useRouter } from "next/navigation";
+import useRentModal from "../../hooks/useRentModal";
 
 interface UserMenuProps {
   currentUser?: User;

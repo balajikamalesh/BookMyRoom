@@ -1,8 +1,11 @@
+import ReservationsClient from "./ReservationsClient";
+
 import EmptyState from "../components/EmptyState";
 import ClientOnly from "../components/ClientOnly";
+
 import getCurrentUser from "../actions/getCurrentUsers";
 import getReservations from "../actions/getReservations";
-import ReservationsClient from "./ReservationsClient";
+import { Listing, Reservation } from "@prisma/client";
 
 const ReservationsPage = async () => {
   const currentUser = await getCurrentUser();
@@ -34,7 +37,11 @@ const ReservationsPage = async () => {
   return (
     <ClientOnly>
       <ReservationsClient
-        reservations={reservations}
+        reservations={
+          reservations as (Reservation & {
+            Listing: Listing;
+          })[]
+        }
         currentUser={currentUser}
       />
     </ClientOnly>

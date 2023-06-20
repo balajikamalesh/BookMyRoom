@@ -22,7 +22,7 @@ interface ListingInfoProps {
         description: string;
       }
     | undefined;
-  locationValue?: string;
+  locationValue: string;
 }
 
 const ListingInfo = ({

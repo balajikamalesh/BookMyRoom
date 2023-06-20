@@ -1,15 +1,16 @@
-import { Nunito } from "next/font/google";
 import "./globals.css";
+
+import { Nunito } from "next/font/google";
+
 import Navbar from "./components/navbar/Navbar";
 import ClientOnly from "./components/ClientOnly";
-
-import LoginModal from "./components/modals/LoginModal";
-import RegisterModal from "./components/modals/RegisterModal";
 import RentModal from "./components/modals/RentModal";
+import LoginModal from "./components/modals/LoginModal";
+import SearchModal from "./components/modals/SearchModal";
+import RegisterModal from "./components/modals/RegisterModal";
 
 import ToasterProvider from "./providers/ToasterProvider";
 import getCurrentUser from "./actions/getCurrentUsers";
-import SearchModal from "./components/modals/SearchModal";
 
 const nunito = Nunito({ subsets: ["latin"] });
 
@@ -34,7 +35,7 @@ export default async function RootLayout({
           <RegisterModal />
           <LoginModal />
           <RentModal />
-          <Navbar currentUser={currentUser} />
+          <Navbar currentUser={currentUser || undefined} />
         </ClientOnly>
         <div className="pb-20 pt-28">{children}</div>
       </body>
