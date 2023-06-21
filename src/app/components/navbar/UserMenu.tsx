@@ -86,8 +86,8 @@ const UserMenu = ({ currentUser }: UserMenuProps) => {
           className="absolute
         rounded-xl
         shadow-md
-        w-[40vw]
-        md:w-76/100
+        w-[16vw]
+        md:w-4/5
         bg-white
         overflow-hidden
         right-0

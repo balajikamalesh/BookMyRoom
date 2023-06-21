@@ -11,6 +11,7 @@ interface HomeProps {
 }
 
 const Home = async ({ searchParams }: HomeProps) => {
+  debugger;
   const listings = await getListings(searchParams);
   const currentUser = await getCurrentUser();
 
@@ -26,8 +27,8 @@ const Home = async ({ searchParams }: HomeProps) => {
     <ClientOnly>
       <Container>
         <div
+          style={{ paddingTop: "6rem" }}
           className="
-          pt-40
           grid 
           grid-cols-1 
           sm:grid-cols-2 

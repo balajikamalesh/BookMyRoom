@@ -36,14 +36,14 @@ const Search = () => {
       return `${diff} Days`;
     }
 
-    return 'Any week'
-  }, []);
+    return "Any week";
+  }, [startDate, endDate]);
 
   const guestLabel = useMemo(() => {
     if (guestCount) return `${guestCount} Guests`;
 
     return "Add guests";
-  }, []);
+  }, [guestCount]);
 
   return (
     <div

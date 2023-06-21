@@ -51,6 +51,7 @@ const SearchModal = () => {
   }, []);
 
   const onSubmit = useCallback(async () => {
+    debugger;
     if (step !== STEPS.INFO) {
       return onNext();
     }
@@ -63,7 +64,7 @@ const SearchModal = () => {
 
     const updatedQuery: any = {
       ...currentQuery,
-      locationValue: location?.value,
+      locationValue: location?.label,
       guestCount,
       roomCount,
       bathroomCount,

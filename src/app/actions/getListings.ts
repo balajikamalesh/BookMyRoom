@@ -33,7 +33,7 @@ export default async function getListings(params: IListingsParams) {
     if (bathroomCount) query.bathroomCount = { gte: +bathroomCount };
 
     if (locationValue) query.locationValue = locationValue;
-    if (category) query.category = category;
+    if (category) query.Category = category;
 
     if (startDate && endDate) {
       query.NOT = {
@@ -47,7 +47,7 @@ export default async function getListings(params: IListingsParams) {
         },
       };
     }
-
+    console.log(query);
     const listings = await prisma?.listing.findMany({
       where: query,
       orderBy: {

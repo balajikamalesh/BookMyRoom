@@ -10,7 +10,6 @@ const formattedCountries = countries.map((country) => ({
 
 const useCountries = () => {
   const getAll = () => formattedCountries;
-  console.log(formattedCountries);
 
   const getByValue = (value: string) => {
     return formattedCountries.find((item) => item.label == value);

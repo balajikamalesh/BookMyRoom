@@ -2,6 +2,7 @@
 import React from "react";
 import Container from "../Container";
 import { TbBeach, TbMountain, TbPool } from "react-icons/tb";
+import { Tooltip } from "react-tooltip";
 import {
   GiBarn,
   GiBoatFishing,
@@ -110,6 +111,8 @@ const Categories = () => {
       <div className="pt-4 flex flex-row items-center justify-between overflow-x-auto">
         {categories.map((item) => (
           <CategoryBox
+            data-tooltip-id={item.label}
+            data-tooltip-content={`Click to add ${item.label} to filter. Click twice to remove.`}
             key={item.label}
             label={item.label}
             selected={category === item.label}
@@ -117,6 +120,7 @@ const Categories = () => {
           />
         ))}
       </div>
+      <Tooltip id="Beach" />
     </Container>
   );
 };
